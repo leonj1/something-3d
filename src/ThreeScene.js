@@ -9,16 +9,15 @@ class ThreeScene extends Component {
 
     componentDidMount() {
         this.updateThree(this.props);
-
         this.refs.anchor.appendChild(this.renderer.domElement);
     }
+
     componentDidUpdate() {
         this.updateThree(this.props);
     }
 
     updateThree(props) {
         const { width, height } = props;
-
         this.renderer.setSize(width, height);
     }
 
@@ -31,7 +30,6 @@ class ThreeScene extends Component {
 
     render() {
         const { width, height, style } = this.props;
-
         return (
             <div ref="anchor" style={[{width, height}, style]}>
                  {this.props.children}

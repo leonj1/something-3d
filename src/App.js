@@ -3,6 +3,8 @@ import logo from './logo.svg';
 import './App.css';
 
 import Cube from './Cube';
+import Circle from './Circle';
+import Bullet from './Bullet';
 import ThreeScene from './ThreeScene';
 import PerspectiveCamera from './PerspectiveCamera';
 
@@ -53,6 +55,10 @@ class App extends Component {
                                   position={{x: 2, y: 0, z: 25}}  />
                             <Cube rotation={rotation2}
                                   position={{x: -10, y: 5, z: 10 }} />
+                            <Circle rotation={rotation2}
+                                    position={{x: 20, y: 5, z: 5 }} />
+                            <Bullet rotation={rotation1}
+                                    position={{x: 20, y: 5, z: 5 }} />
 
                         </PerspectiveCamera>
                     </ThreeScene>

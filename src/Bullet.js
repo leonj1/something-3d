@@ -3,10 +3,10 @@ import { Component } from 'react';
 import PropTypes from 'prop-types';
 import * as THREE from 'three';
 
-class Cube extends Component {
+class Bullet extends Component {
     componentWillMount() {
-        this.geometry = new THREE.BoxGeometry(1, 1, 1);
-        this.material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+        this.geometry = new THREE.SphereGeometry(0.25,8,8);
+        this.material = new THREE.MeshBasicMaterial({ color: 0xffffff });
         this.cube = new THREE.Mesh(this.geometry, this.material);
 
         this.context.scene.add(this.cube);
@@ -15,8 +15,8 @@ class Cube extends Component {
     componentDidUpdate() {
         const { rotation, position } = this.props;
 
-        this.cube.rotation.x = rotation.x;
-        this.cube.rotation.y = rotation.y;
+        // this.cube.rotation.x = rotation.x;
+        // this.cube.rotation.y = rotation.y;
         //this.cube.rotation.z = rotation.z;
 
         this.cube.position.x = position.x;
@@ -29,9 +29,9 @@ class Cube extends Component {
     }
 }
 
-Cube.contextTypes = {
+Bullet.contextTypes = {
     scene: PropTypes.object
 }
 
 
-export default Cube;
+export default Bullet;
